@@ -8,14 +8,14 @@ class Account:
 
     def income(self, amount):
         self.money += amount
-        self.history.append(('수입:', amount))
+        self.history.append(('수입: ', amount))
         with open(self.filename, 'a') as file:
-                file.write(f"지출: {amount}\n")
+                file.write(f"수입: {amount}\n")
 
     def expense(self, amount):
         if amount <= self.money:
             self.money -= amount
-            self.history.append(('지출', amount))
+            self.history.append(('지출: ', amount))
             with open(self.filename, 'a') as file:
                 file.write(f"지출: {amount}\n")
         else:
